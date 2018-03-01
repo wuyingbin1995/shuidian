@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/new_file.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Home/js/need/layer.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/mui.min.css">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/layer.js"></script>
+    <title>充值记录</title>
+    <style>
+        body{
+            background-color: #efeff4;
+        }
+        .title {
+            padding-top: 10px;
+            padding-bottom: 5px;
+            padding-left: 11px;
+            color: #6d6d72;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<br>
+
+<!--     <header>
+        <a href="__CONTROLLER__/login_id">
+            <div class="_left"><img src="__PUBLIC__/Home/images/Arrow_left_icon.png"></div>
+            充值记录
+        </a>
+    </header>
+ -->    <!--<div class="banner" style="height: 70px;margin-bottom:0;">
+        <img src="__PUBLIC__/Home/images/2017.png" width="100%" height="100%"/>
+    </div>-->
+<form class="mui-input-group mui-card" style="width: 96%;margin: 0 auto 5px;">
+    <div class="mui-input-row">
+        <label>表计位置:</label>
+        <select id='hehe'>
+            <option value="0">请选择查询地址</option>
+            <volist name="data" id="vl">
+                <option value="{$vl.dbccbh}">{$vl.yhdz}</option>
+            </volist>
+        </select>
+    </div>
+    <div class="mui-input-row">
+        <label>用表类型:</label>
+        <input type="text" id="ydlxbh" value="" disabled/>
+        <input type="hidden" id="ydlx" value="" disabled/>
+    </div>
+    <div class="mui-input-row">
+                <label>累计购量:</label>
+                <input type="text" id="zgdl" value="" disabled/>
+            </div>
+            <div class="mui-input-row">
+                <label>累计用量:</label>
+                <input type="text" id="zydl" value="" disabled/>
+            </div>
+            <div class="mui-input-row">
+                <label>当日余量:</label>
+                <input type="text" id="dqyue" value="" disabled/>
+            </div>
+    </form>
+<volist name="data1" id="v"> 
+    <div style="margin-top:15px;background-color:#fff;" align="center"><strong style="padding-right: 5px;">&emsp;{$key}年</strong></div>
+    <volist name="v" id="vo">
+        <div class="mui-content">     
+            <div class="title">
+    
+                <strong>{$key}月</strong><!--  <h5>支出:<span>1111</span>元</h5> -->
+            </div>
+             <div class="mui-card" style="margin: 2px 10px;">
+                <ul class="mui-table-view">
+                <volist name="vo" id="vol">
+                    <li class="mui-table-view-cell mui-media">
+                        <a class="mui-navigate-right" href="__CONTROLLER__/detail/id/{$vol.ddbh}">
+                            <img class="mui-media-object mui-pull-left" src="__PUBLIC__/Home/images/cbd.jpg">
+                            <div class="mui-media-body">
+                                <!-- <h4> <if condition="$vol.ydlx eq 1 ">充值缴费 <else />充值缴费</if></h4> -->
+                                <br>
+                                <p class='mui-ellipsis'>{$vol.bcgdrq}&emsp;本次充值：{$vol.bcjk}元</p>
+                            </div>
+                        </a>
+                    </li>
+                </volist>
+                </ul>
+            </div>
+        </div>
+    </volist> 
+</volist>
+
+</body>
+</html>
+<script>
+    $(function(){
+        //获取购电量余量等数据
+        $("#hehe").change(function(){
+            var eee = $("#hehe").val();
+            if(eee != '0'){
+                var data = {'dbccbh' : eee};
+                //console.log(data);
+                $.ajax({
+                    'url' : '__CONTROLLER__/get_dqyue',
+                    'type' : 'post',
+                    'data': data,
+                    'dataType' : 'json',
+                    'success' : function(response){
+                        if(response.code != 10000){
+                            layer.open({
+                                content: response.msg,
+                                style: 'background:rgba(0,0,0,0.6); color:#fff; border:none;',
+                                time: 3
+                            });
+                        }else{
+                            if(response.ydlx == 1){
+                                $('#zgdl').val(response.zgdl + ' 度');
+                                $('#zydl').val(response.zydl + ' 度');
+                                $('#dqyue').val(response.dqyue + ' 度');
+                                $('#ydlxbh').val(response.ydlxk);
+                                $('#ydlx').val(response.ydlx);
+                            }else{
+                                $('#zgdl').val(response.zgdl + ' 立方米');
+                                $('#zydl').val(response.zydl + ' 立方米');
+                                $('#dqyue').val(response.dqyue + ' 立方米');
+                                $('#ydlxbh').val(response.ydlxk);
+                                $('#ydlx').val(response.ydlx);
+                            }
+                            
+                        }
+                    }
+                });
+            }else{
+                layer.open({
+                    content: '请选择你要查询的地址!',
+                    style: 'background:rgba(0,0,0,0.6); color:#fff; border:none;',
+                    time: 3
+                });
+                $('#zgdl').val('');
+                $('#zydl').val('');
+                $('#dqyue').val('');
+                $('#ydlxbh').val('');
+                $('#ydlx').val('');
+            }
+        });
+    });
+</script>

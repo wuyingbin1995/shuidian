@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/new_file.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Home/js/need/layer.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/mui.min.css">
+    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/mui.min.js"></script>
+    <title>订单详情</title>
+    <style>
+        .mui-card{box-shadow: 1px 2px 5px rgba(0,0,0,.3);}
+        .mui-table-view-cell:after{right: 15px;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="__CONTROLLER__/record">
+            <div class="_left"><img src="__PUBLIC__/Home/images/Arrow_left_icon.png"></div>
+            订单详情
+        </a>
+    </header>
+    <div class="mui-card" style="margin-top:55px;">
+        <ul class="mui-table-view">
+
+        <volist name="gdjlk" id="value" >
+            <li class="mui-table-view-cell mui-text-center">
+                <p style="color:#000000;">
+                    <img src="__PUBLIC__/Home/images/success.gif" alt="" style="width: 20px;height: 20px;">
+                    <strong>海湾水电费充值系统</strong>
+                </p>
+
+                <h3 style="margin: 10px 0">{$value.bcjk}</h3>
+                <p style="color:#000000;">充值成功</p>
+            </li>
+            <li class="mui-table-view-cell">
+                交易状态
+                <i class="mui-pull-right">充值成功</i>
+            </li>
+            <li class="mui-table-view-cell">
+                充值说明
+                <i class="mui-pull-right"> <if condition="$value.ydlx eq 1 ">电费充值<else /> 水费充值</if></i>
+            </li>
+			<li class="mui-table-view-cell">
+                支付类型
+                <i class="mui-pull-right"> <if condition="$value.zflx eq 1 ">微信<else /> 支付宝</if></i>
+            </li>
+            <li class="mui-table-view-cell">
+                充值号码
+                <i class="mui-pull-right">{$value.yhdh}</i>
+            </li>
+            <li class="mui-table-view-cell">
+                充值住址
+                <i class="mui-pull-right">{$value.yhdz}</i>
+            </li>
+            <li class="mui-table-view-cell">
+                充值金额
+                <i class="mui-pull-right">{$value.bcjk}</i>
+            </li>
+            <li class="mui-table-view-cell">
+                充值时间
+                <i class="mui-pull-right">{$value.bcgdrq}</i>
+            </li>
+            <li class="mui-table-view-cell">
+                订单编号
+                <i class="mui-pull-right">{$value.ddbh}</i>
+            </li>
+        </volist>
+
+        </ul>
+    </div>
+    <!-- <div class="mui-card">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">添加标签</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">查看往来记录</a>
+            </li>
+        </ul>
+    </div>
+    <div class="mui-card">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">对此订单有疑问</a>
+            </li>
+        </ul>
+    </div> -->
+</body>
+</html>

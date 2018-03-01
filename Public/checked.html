@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+<input type="checkbox" id="one" >一级
+<input type="checkbox" id="two" disabled>二级
+</body>
+<script>
+    $(function(){
+        $("#one").click(function(){
+            var aaa = $("#one").prop("checked");
+            if(aaa){
+                $("#two").attr("disabled",false);
+            }else{
+                $("#two").prop("checked",false);
+                $("#two").attr("disabled",true);
+            }
+        });
+    });
+</script>
+</html> 

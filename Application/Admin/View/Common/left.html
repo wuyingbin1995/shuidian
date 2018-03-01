@@ -1,0 +1,72 @@
+<!-- 左侧 -->
+<nav id="mainnav-container">
+    <div id="mainnav">
+        <div id="mainnav-menu-wrap">
+            <div class="nano">
+                <div class="nano-content">
+                    <div id="mainnav-profile" class="mainnav-profile">
+                        <div class="profile-wrap">
+                            <div class="pad-btm">
+                                <span class="label label-success pull-right"><if condition="$Think.session.manager_info.role_id == 1 ">超级管理员<else />{$Think.session.role_info.role_name}</if></span>
+                                <img class="img-circle img-sm img-border" src="__PUBLIC__/Admin/images/logo.png" alt="Profile Picture">
+                            </div>
+                            <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
+                                <span class="pull-right dropdown-toggle">
+                                    <i class="dropdown-caret"></i>
+                                </span>
+                                <p class="mnp-name">{$Think.session.manager_info.nickname}</p>
+                                <span class="mnp-desc">欢迎回来,<if condition="$Think.session.manager_info.role_id == 1 ">超级管理员<else />{$Think.session.role_info.role_name}</if>!</span>
+                            </a>
+                        </div>
+                        <div id="profile-nav" class="collapse list-group bg-trans">
+                            <a href="__MODULE__/Index/logout" class="list-group-item">
+                                <i class="demo-pli-unlock icon-lg icon-fw">安全退出</i>
+                            </a>
+                        </div>
+                    </div>
+                    <ul id="mainnav-menu" class="list-group">
+                        <li class="list-header">菜单导航</li>
+                        <li class="active-link">
+                            <a href="__MODULE__/Index/index">
+                                <i class="demo-psi-home"></i>
+                                <span class="menu-title">
+                                    <strong>首页</strong>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- 遍历顶级权限 -->
+                        <volist name="Think.session.top" key="k" id="top_v">
+                        <li>
+                            <a href="#">
+                                <i class="demo-pli-remove-user"></i>
+                                <span class="menu-title">
+                                    <strong>{$top_v.auth_name}</strong>
+                                </span>
+                                <i class="arrow"></i>
+                            </a>
+                            <ul class="collapse">
+                                <!-- 遍历二级权限 -->
+                                <volist name="Think.session.second" key="k" id="second_v" >
+                                <if condition="$second_v.pid == $top_v.id " >
+                                <li><a href="__MODULE__/{$second_v.auth_c}/{$second_v.auth_a}">{$second_v.auth_name}</a></li>
+                                </if>
+                                </volist>
+                                
+                            </ul>
+                        </li>
+                        </volist>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+           
+<footer id="footer">
+    <p class="text-center"> Copyright&#0169; 2017 东铖智能科技版权所有</p>
+</footer>
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+    </button>
+ </div>

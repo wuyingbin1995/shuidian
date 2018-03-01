@@ -1,0 +1,10 @@
+[ 2018-03-01T12:16:58+08:00 ] ::1 /shuidian/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008989s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007076s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::success() should be compatible with Think\Controller::success($message = '', $jumpUrl = '', $ajax = false) D:\phpStudy\PHPTutorial\WWW\shuidian\Application\Home\Controller\IndexController.class.php 第 466 行.
+ERR: 模板不存在:./Application/Home/View/Index/index.html
+

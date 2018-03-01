@@ -1,0 +1,17 @@
+{     "appid":"wx2a1c83dd0d9cf5cc",
+      "bank_type":"CCB_DEBIT",
+      "cash_fee":"1",
+      "fee_type":"CNY",
+      "is_subscribe":"Y",
+      "mch_id":"1437613102",
+      "nonce_str":"test",
+      "openid":"ooTHks2AA8kBppk6TnlT5BM8WEg8",
+      "out_trade_no":"1516439272-110116111489-1",
+      "result_code":"SUCCESS",
+      "return_code":"SUCCESS",
+      "sign":"B30E5AED471FF1599705D6945D84569B",
+      "time_end":"20180120170800",
+      "total_fee":"1",
+      "trade_type":"JSAPI",
+      "transaction_id":"4200000072201801207584665447"
+}
