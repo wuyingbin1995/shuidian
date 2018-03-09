@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <link href="/Public/Admin/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/Public/Admin/js/jquery-2.2.4.min.js"></script>
-    <script src="/Public/Admin/js/bootstrap.min.js"></script>
+    <link href="/shuidian/Public/Admin/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/shuidian/Public/Admin/js/jquery-2.2.4.min.js"></script>
+    <script src="/shuidian/Public/Admin/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map//Public/Admin/js/china.js"></script>
-    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map//Public/Admin/js/world.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map//shuidian/Public/Admin/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map//shuidian/Public/Admin/js/world.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
     <style>hr{margin-top: 0;}</style>

@@ -119,8 +119,8 @@
                             </if>
                             </span></td>
                             <td>
-                                <button class="demo-modify-row btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
-                                <button class="demo-delete-row btn btn-danger btn-xs" >删除</button>
+                                <button class="demo-modify-rows btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                                <button class="demo-delete-rowss btn btn-danger btn-xs" >删除</button>
                             </td>
                         </tr>
                     </volist>
@@ -368,8 +368,12 @@
             });
         });
 
+        function deleterow(){
+            alert(1);
+        }
+
         //修改数据
-        $(".demo-modify-row").click(function(){
+        $(".demo-modify-rows").click(function(){
 
             /*弹出页面显示输入框*/
             $('#myInput').focus();
@@ -457,9 +461,10 @@
         });
 
         //刪除
-        $(".demo-delete-row").click(function(){
-            if(confirm('是否删除？'))
+        $(".demo-delete-rowss").click(function(){
+            if(confirm('是否删除'))
             {
+
                 /*获取到你点击那一行的下标*/
                 var TrIndex = $(this).parent().parent().index();
                 /*获取到你点击的那一行里面的内容*/

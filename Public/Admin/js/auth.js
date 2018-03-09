@@ -140,38 +140,38 @@ $(function(){
         });
 
         //刪除
-        $(".demo-delete-row").click(function(){
-            if(confirm('是否删除？'))
-            {
-                /*获取到你点击那一行的下标*/
-                var TrIndex = $(this).parent().parent().index();
-                /*获取到你点击的那一行里面的内容*/
-                var TrIndexUser = $(".tbodyTr tr:eq("+TrIndex+") td:eq(0)").text();
-                //获取id
-                var id = TrIndexUser;
-                //组装要发生的数据
-                var data = {'id' : id};
-                // console.log(data);
-                // return;
-                //发送ajax请求
-                $.ajax({
-                    'url':'__CONTROLLER__/auth_del',
-                    'type':'post',
-                    'data':data,
-                    'dataType':'json',
-                    'success':function(response){
-                        //console.log(response);
-                        if(response.code != 10000){
-                            //判断返回结果中的code ，不是10000都代表失败，提示错误信息
-                            alert(response.msg);
-                            return;
-                        }else{
-                            //删除成功刷新当前页面，同步数据库数据
-                            window.location.reload();
-                        }
-                    }
-                });
-            }
+        // $(".demo-delete-row").click(function(){
+        //     if(confirm('是否删除？'))
+        //     {
+        //         /*获取到你点击那一行的下标*/
+        //         var TrIndex = $(this).parent().parent().index();
+        //         /*获取到你点击的那一行里面的内容*/
+        //         var TrIndexUser = $(".tbodyTr tr:eq("+TrIndex+") td:eq(0)").text();
+        //         //获取id
+        //         var id = TrIndexUser;
+        //         //组装要发生的数据
+        //         var data = {'id' : id};
+        //         // console.log(data);
+        //         // return;
+        //         //发送ajax请求
+        //         $.ajax({
+        //             'url':'__CONTROLLER__/auth_del',
+        //             'type':'post',
+        //             'data':data,
+        //             'dataType':'json',
+        //             'success':function(response){
+        //                 //console.log(response);
+        //                 if(response.code != 10000){
+        //                     //判断返回结果中的code ，不是10000都代表失败，提示错误信息
+        //                     alert(response.msg);
+        //                     return;
+        //                 }else{
+        //                     //删除成功刷新当前页面，同步数据库数据
+        //                     window.location.reload();
+        //                 }
+        //             }
+        //         });
+        //     }
             
-        });
+        // });
     });

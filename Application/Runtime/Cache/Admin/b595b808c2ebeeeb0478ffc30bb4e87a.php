@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>欢迎登录 - 海湾管理系统</title>
-    <link href="/Public/Admin/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/Public/Admin/css/nifty.min.css" rel="stylesheet">
-    <link href="/Public/Admin/css/nifty-demo-icons.min.css" rel="stylesheet">
-    <link href="/Public/Admin/css/footable.core.css" rel="stylesheet">
-    <script src="/Public/Admin/js/jquery-2.2.4.min.js"></script>
-    <script src="/Public/Admin/js/bootstrap.min.js"></script>
-    <script src="/Public/Admin/js/nifty.min.js"></script>
-    <script src="/Public/Admin/js/footable.all.min.js"></script>
-    <script src="/Public/Admin/js/tables-footable.js"></script>
+    <link href="/shuidian/Public/Admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/shuidian/Public/Admin/css/nifty.min.css" rel="stylesheet">
+    <link href="/shuidian/Public/Admin/css/nifty-demo-icons.min.css" rel="stylesheet">
+    <link href="/shuidian/Public/Admin/css/footable.core.css" rel="stylesheet">
+    <script src="/shuidian/Public/Admin/js/jquery-2.2.4.min.js"></script>
+    <script src="/shuidian/Public/Admin/js/bootstrap.min.js"></script>
+    <script src="/shuidian/Public/Admin/js/nifty.min.js"></script>
+    <script src="/shuidian/Public/Admin/js/footable.all.min.js"></script>
+    <script src="/shuidian/Public/Admin/js/tables-footable.js"></script>
     <style>
         #content-container{padding-bottom: 0;}
     </style>
@@ -22,8 +22,8 @@
         <header id="navbar">
             <div id="navbar-container" class="boxed">
                 <div class="navbar-header">
-                    <a href="/index.php/Admin/Index/index" class="navbar-brand">
-                        <img src="/Public/Admin/picture/logo.png" alt="Nifty Logo" class="brand-icon">
+                    <a href="/shuidian/index.php/Admin/Index/index" class="navbar-brand">
+                        <img src="/shuidian/Public/Admin/picture/logo.png" alt="Nifty Logo" class="brand-icon">
                         <!--  -->
                         <div class="brand-title">
                             <span class="brand-text">海湾管理系统</span>
@@ -65,7 +65,7 @@
                                     </li>
                                 </ul>
                                 <div class="pad-all text-right">
-                                    <a href="/index.php/Admin/Index/logout" class="btn btn-primary">
+                                    <a href="/shuidian/index.php/Admin/Index/logout" class="btn btn-primary">
                                         <i class="demo-pli-unlock"></i> 安全退出
                                     </a>
                                 </div>
@@ -79,7 +79,7 @@
         <div id="container" class="effect aside-float aside-bright mainnav-lg">
 <!-- 右侧 -->
         <div id="content-container">
-	    	<iframe id="Iframe" src="/index.php/Admin/Index/homepage" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+	    	<iframe id="Iframe" src="/shuidian/index.php/Admin/Index/homepage" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
 		</div>
 <!-- 左侧 -->
 <!-- 左侧 -->
@@ -92,7 +92,7 @@
                         <div class="profile-wrap">
                             <div class="pad-btm">
                                 <span class="label label-success pull-right"><?php if($_SESSION['manager_info']['role_id']== 1 ): ?>超级管理员<?php else: echo ($_SESSION['role_info']['role_name']); endif; ?></span>
-                                <img class="img-circle img-sm img-border" src="/Public/Admin/images/logo.png" alt="Profile Picture">
+                                <img class="img-circle img-sm img-border" src="/shuidian/Public/Admin/images/logo.png" alt="Profile Picture">
                             </div>
                             <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
                                 <span class="pull-right dropdown-toggle">
@@ -103,7 +103,7 @@
                             </a>
                         </div>
                         <div id="profile-nav" class="collapse list-group bg-trans">
-                            <a href="/index.php/Admin/Index/logout" class="list-group-item">
+                            <a href="/shuidian/index.php/Admin/Index/logout" class="list-group-item">
                                 <i class="demo-pli-unlock icon-lg icon-fw">安全退出</i>
                             </a>
                         </div>
@@ -111,7 +111,7 @@
                     <ul id="mainnav-menu" class="list-group">
                         <li class="list-header">菜单导航</li>
                         <li class="active-link">
-                            <a href="/index.php/Admin/Index/index">
+                            <a href="/shuidian/index.php/Admin/Index/index">
                                 <i class="demo-psi-home"></i>
                                 <span class="menu-title">
                                     <strong>首页</strong>
@@ -129,7 +129,7 @@
                             </a>
                             <ul class="collapse">
                                 <!-- 遍历二级权限 -->
-                                <?php if(is_array($_SESSION['second'])): $k = 0; $__LIST__ = $_SESSION['second'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$second_v): $mod = ($k % 2 );++$k; if($second_v["pid"] == $top_v["id"] ): ?><li><a href="/index.php/Admin/<?php echo ($second_v["auth_c"]); ?>/<?php echo ($second_v["auth_a"]); ?>"><?php echo ($second_v["auth_name"]); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                <?php if(is_array($_SESSION['second'])): $k = 0; $__LIST__ = $_SESSION['second'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$second_v): $mod = ($k % 2 );++$k; if($second_v["pid"] == $top_v["id"] ): ?><li><a href="/shuidian/index.php/Admin/<?php echo ($second_v["auth_c"]); ?>/<?php echo ($second_v["auth_a"]); ?>"><?php echo ($second_v["auth_name"]); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                 
                             </ul>
                         </li><?php endforeach; endif; else: echo "" ;endif; ?>

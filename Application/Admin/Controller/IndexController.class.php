@@ -6,6 +6,7 @@ class IndexController extends CommonController
 	//首页
     public function index()
     {
+        //dump(session());
     	$this->display();
     }
 

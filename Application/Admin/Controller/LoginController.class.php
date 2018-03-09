@@ -7,7 +7,9 @@ class LoginController extends Controller
 	//ajax登陆
     public function login()
     {	
-    	//echo encrypt_password('123456');die;
+    	// $rs = M('Manager')->select();
+    	// dump($rs);
+    	//echo encrypt_password('admin');die;
     	//判断是否是ajax请求
     	if(IS_POST)
     	{
