@@ -129,7 +129,8 @@
                             </a>
                             <ul class="collapse">
                                 <!-- 遍历二级权限 -->
-                                <?php if(is_array($_SESSION['second'])): $k = 0; $__LIST__ = $_SESSION['second'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$second_v): $mod = ($k % 2 );++$k; if($second_v["pid"] == $top_v["id"] ): ?><li><a href="/shuidian/index.php/Admin/<?php echo ($second_v["auth_c"]); ?>/<?php echo ($second_v["auth_a"]); ?>"><?php echo ($second_v["auth_name"]); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                                <?php if(is_array($_SESSION['second'])): $k = 0; $__LIST__ = $_SESSION['second'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$second_v): $mod = ($k % 2 );++$k; if($second_v["pid"] == $top_v["id"] ): ?><li onclick="$('#Iframe').attr('src','/shuidian/index.php/Admin/<?php echo ($second_v["auth_c"]); ?>/<?php echo ($second_v["auth_a"]); ?>');"><a href="javascript:void(0)"><?php echo ($second_v["auth_name"]); ?></a></li>
+                                <!-- <li><a href="/shuidian/index.php/Admin/<?php echo ($second_v["auth_c"]); ?>/<?php echo ($second_v["auth_a"]); ?>"><?php echo ($second_v["auth_name"]); ?></a></li> --><?php endif; endforeach; endif; else: echo "" ;endif; ?>
                                 
                             </ul>
                         </li><?php endforeach; endif; else: echo "" ;endif; ?>

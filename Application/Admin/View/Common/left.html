@@ -48,7 +48,8 @@
                                 <!-- 遍历二级权限 -->
                                 <volist name="Think.session.second" key="k" id="second_v" >
                                 <if condition="$second_v.pid == $top_v.id " >
-                                <li><a href="__MODULE__/{$second_v.auth_c}/{$second_v.auth_a}">{$second_v.auth_name}</a></li>
+                                <li onclick="$('#Iframe').attr('src','__MODULE__/{$second_v.auth_c}/{$second_v.auth_a}');"><a href="javascript:void(0)">{$second_v.auth_name}</a></li>
+                                <!-- <li><a href="__MODULE__/{$second_v.auth_c}/{$second_v.auth_a}">{$second_v.auth_name}</a></li> -->
                                 </if>
                                 </volist>
                                 
