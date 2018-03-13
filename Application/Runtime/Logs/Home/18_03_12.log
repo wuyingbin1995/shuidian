@@ -8,3 +8,53 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 NOTIC: [2048] Declaration of Home\Controller\IndexController::success() should be compatible with Think\Controller::success($message = '', $jumpUrl = '', $ajax = false) D:\Phpstudy\PHPTutorial\WWW\shuidian\Application\Home\Controller\IndexController.class.php 第 466 行.
 ERR: 模板不存在:./Application/Home/View/Index/index.html
 
+[ 2018-03-12T10:09:10+08:00 ] ::1 /shuidian/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::success() should be compatible with Think\Controller::success($message = '', $jumpUrl = '', $ajax = false) D:\phpStudy\WWW\shuidian\Application\Home\Controller\IndexController.class.php 第 466 行.
+ERR: 模板不存在:./Application/Home/View/Index/index.html
+
+[ 2018-03-12T11:26:50+08:00 ] ::1 /shuidian/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::success() should be compatible with Think\Controller::success($message = '', $jumpUrl = '', $ajax = false) D:\phpStudy\WWW\shuidian\Application\Home\Controller\IndexController.class.php 第 466 行.
+ERR: 模板不存在:./Application/Home/View/Index/index.html
+
+[ 2018-03-12T17:08:41+08:00 ] ::1 /shuidian/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::success() should be compatible with Think\Controller::success($message = '', $jumpUrl = '', $ajax = false) D:\phpStudy\WWW\shuidian\Application\Home\Controller\IndexController.class.php 第 466 行.
+ERR: 模板不存在:./Application/Home/View/Index/index.html
+
+[ 2018-03-12T17:08:47+08:00 ] ::1 /shuidian/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::success() should be compatible with Think\Controller::success($message = '', $jumpUrl = '', $ajax = false) D:\phpStudy\WWW\shuidian\Application\Home\Controller\IndexController.class.php 第 466 行.
+ERR: 模板不存在:./Application/Home/View/Index/index.html
+
+[ 2018-03-12T17:56:13+08:00 ] ::1 /shuidian/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::success() should be compatible with Think\Controller::success($message = '', $jumpUrl = '', $ajax = false) D:\phpStudy\WWW\shuidian\Application\Home\Controller\IndexController.class.php 第 466 行.
+ERR: 模板不存在:./Application/Home/View/Index/index.html
+

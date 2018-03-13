@@ -42,7 +42,7 @@ class AuthController extends CommonController
 			$model = M('auth');
 			//分页
 			$total = $model -> count();
-			$pagesize = 15;
+			$pagesize = 16;
 
 			$page = new \Think\Page($total, $pagesize);
 			//定制分页栏显示

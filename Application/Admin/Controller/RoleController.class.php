@@ -73,7 +73,7 @@ class RoleController extends CommonController
 	        $this -> assign('auth', $data);
 			//分页
 			$total = $model -> count();
-			$pagesize = 15;
+			$pagesize = 16;
 			$page = new \Think\Page($total, $pagesize);
 			//定制分页栏显示
 			$page -> setConfig('prev', '上一页');
