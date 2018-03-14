@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>设置数据采集</title>
+    <title>查看控制器所有表数据</title>
     <link href="/shuidian/Public/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="/shuidian/Public/Admin/css/nifty.min.css" rel="stylesheet">
     <link href="/shuidian/Public/Admin/css/nifty-demo-icons.min.css" rel="stylesheet">

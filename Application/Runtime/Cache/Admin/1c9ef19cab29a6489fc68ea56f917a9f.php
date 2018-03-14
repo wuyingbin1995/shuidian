@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎登录 - 海湾管理系统</title>
+    <title>控制器列表</title>
     <link href="/shuidian/Public/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="/shuidian/Public/Admin/css/nifty.min.css" rel="stylesheet">
     <link href="/shuidian/Public/Admin/css/nifty-demo-icons.min.css" rel="stylesheet">
@@ -67,7 +67,7 @@
                                 <td>陕西陕西安市</td>
                                 <td>正常使用中</td>
                                 <td>
-                                    <button class="demo-delete-rows btn btn-success btn-xs" >添加表</button>
+                                    <button class="demo-delete-rows btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">添加表</button>
                                     <button class="demo-modify-rows btn btn-primary btn-xs">清零</button>
                                     <button class="demo-delete-rows btn btn-danger btn-xs" >删除</button>
                                 </td>
@@ -92,9 +92,17 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label text-right">权限编号</label>
+                                    <label class="col-md-4 control-label text-right">控制器编号</label>
                                     <div class="col-md-8">
-                                        <input class="form-control" type="text" id="AddTrIndexUserTd0" disabled>
+                                        <input class="form-control" type="text" id="AddTrIndexUserTd1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label text-right">详细位置</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" type="text" id="AddTrIndexUserTd1">
                                     </div>
                                 </div>
                             </div>
@@ -103,21 +111,6 @@
                                     <label class="col-md-4 control-label text-right">权限名称</label>
                                     <div class="col-md-8">
                                         <input class="form-control" type="text" id="AddTrIndexUserTd1">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label text-right">上级权限</label>
-                                    <div class="col-md-8">
-                                        <select class="form-control" id="AddTrIndexUserTd2">
-                                            <option value="0">作为顶级权限</option>
-
-                                            <!-- 遍历修改权限 -->
-                                            <?php if(is_array($top)): $i = 0; $__LIST__ = $top;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vol["id"]); ?>" <?php if( $vol["id"] == $vol["pid"] ): ?>selected="selected"<?php endif; ?> ><?php echo ($vol["auth_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-                                            <!-- 遍历修改权限完毕 -->
-
-                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -139,11 +132,95 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <div class="form-group">
                                 <label class="col-md-4 control-label text-right">菜单项</label>
                                 <div class="col-md-8">
                                     <select class="form-control" id="AddTrIndexUserTd5">
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary demo-btn-addrow" data-dismiss="modal">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--修改用户信息模块-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">请填写你要增加的用户信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-right">用户编号</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" id="TrIndexUserTd0" type="text" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-right">用户昵称</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" id="TrIndexUserTd1" type="text" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-right">用户角色</label>
+                                <div class="col-md-8">
+                                    
+                                    <select class="form-control" id="TrIndexUserTd2" >
+                                        <option value="1">超级管理员</option>
+                                    <!-- 遍历修改用户 -->
+                                    <?php if(is_array($role)): $i = 0; $__LIST__ = $role;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vol["role_id"]); ?>"><?php echo ($vol["role_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                                    <!-- 遍历修改用户完毕 -->
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-right">用户账号</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" id="TrIndexUserTd3" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-right">用户密码</label>
+                                <div class="col-md-8">
+                                    <input type="password" class="form-control input-md" id="TrIndexUserTd4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label text-right">是否可用</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="TrIndexUserTd5">
                                         <option value="1">是</option>
                                         <option value="0">否</option>
                                     </select>
@@ -155,11 +232,13 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary demo-btn-addrow" data-dismiss="modal">提交</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="myModalSuccess">提交</button>
             </div>
         </div>
     </div>
 </div>
+
+
 </body>
 <script>
 

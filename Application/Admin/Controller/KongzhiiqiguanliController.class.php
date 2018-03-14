@@ -6,31 +6,36 @@ class KongzhiiqiguanliController extends CommonController
 	//首页
     public function Shujucaiji()
     {
-        //dump(session());
+        if(IS_POST){
+            dump(I('post.'));
+            die;
+            echo "<script>parent.location.href='".U('Admin/Kongzhiiqiguanli/index')."'</script>";
+        }
     	$this->display();
     }
 
     public function Lazhahezha()
     {
-        //dump(session());
+        // dump(I('post.'));
+        // die;   
         $this->display();
     }
 
     public function Kongliebiao()
     {
-        //dump(session());
+        
         $this->display();
     }
 
     public function Biaoshuju()
     {
-        //dump(session());
+        
         $this->display();
     }
 
     public function Kongshizhongguanli()
     {
-        //dump(session());
+        
         $this->display();
     }
 }

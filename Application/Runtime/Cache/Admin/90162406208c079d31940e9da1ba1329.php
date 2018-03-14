@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎登录 - 海湾管理系统</title>
+    <title>控制器时钟管理</title>
     <link href="/shuidian/Public/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="/shuidian/Public/Admin/css/nifty.min.css" rel="stylesheet">
     <link href="/shuidian/Public/Admin/css/nifty-demo-icons.min.css" rel="stylesheet">
