@@ -11,7 +11,7 @@ return array(
     'DB_CHARSET'            =>  'utf8',      		// 数据库编码默认采用utf8*/
 
      'DB_TYPE'               =>  'sqlsrv',           // 数据库类型
-    'DB_HOST'               =>  'R8HGFVKLOFLE697\SQLEXPRESS',       // 服务器地址
+    'DB_HOST'               =>  'TZWWDPD0AJRMFDU\SQLEXPRESS',       // 服务器地址
     'DB_NAME'               =>  'shuidian',             // 数据库名
     'DB_USER'               =>  'sa',               // 用户名
     'DB_PWD'                =>  '123456',           // 密码
