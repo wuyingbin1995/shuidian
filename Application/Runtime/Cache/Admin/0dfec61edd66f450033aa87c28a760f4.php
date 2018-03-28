@@ -93,8 +93,6 @@
                             //登录成功 跳转页面
                             location.href = '/shuidian/index.php/Admin/Index/index';
                         }
-                    },error:function (xml) {
-                        alert(1);
                     }
                 });
                 /*禁止F12*/
